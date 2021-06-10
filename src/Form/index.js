@@ -35,7 +35,6 @@ const Form = () => {
             (defaultRates.find(({ name }) => name === myCurrency).rate);
 
         const result = (myAmount / finalRate);
-
         return Number.isInteger(result) ? result : result.toFixed(2);
     };
 
@@ -77,8 +76,7 @@ const Form = () => {
         <form onSubmit={onFormSubmit} className="form">
             <p>
                 <label>
-                    <strong className="form__inputDescription form__inputDescription--myAmount"
-                    >
+                    <strong className="form__inputDescription form__inputDescription--myAmount">
                         Kwota:
                     </strong>
                     <input
@@ -112,7 +110,9 @@ const Form = () => {
             </p>
             <p>
                 <label>
-                    <span className="form__inputDescription">Przelicz na:</span>
+                    <span className="form__inputDescription">
+                        Przelicz na:
+                    </span>
                     <select
                         value={wantedCurrency}
                         onChange={onWantedCurrencyChange}
@@ -175,7 +175,7 @@ const Form = () => {
             </p>
             <p className="form__result">{resultText}</p>
         </form>
-    )
+    );
 };
 
 export default Form;
