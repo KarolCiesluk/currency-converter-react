@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 
 const Form = () => {
-    const [result, setResult] = useState("");
+    const [resultText, setResultText] = useState("");
     const [myAmount, setMyAmount] = useState("");
     const [myCurrency, setMyCurrency] = useState("PLN");
     const [wantedCurrency, setWantedCurrency] = useState("EUR");
@@ -29,16 +29,21 @@ const Form = () => {
     ];
 
     const calculateResult = () => {
-        console.log((myAmount * defaultRates.find(({ name }) => name === myCurrency).rate) / (defaultRates.find(({name}) => name === wantedCurrency).rate));
+        const finalRate = customRate ?
+            customRate :
+            (defaultRates.find(({ name }) => name === wantedCurrency).rate) /
+            (defaultRates.find(({ name }) => name === myCurrency).rate);
 
-        
+        const result = (myAmount / finalRate);
+
+        return Number.isInteger(result) ? result : result.toFixed(2);
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        
 
-        // setResult(calculateResult());
+        const finalAmount = calculateResult();
+        setResultText(`${myAmount} ${myCurrency} = ${finalAmount} ${wantedCurrency}`);
     };
 
     const onRateOptionChange = ({ target }) => {
@@ -168,7 +173,7 @@ const Form = () => {
             <p>
                 <button className="form__button">Przelicz!</button>
             </p>
-            <p className="form__result">{result}</p>
+            <p className="form__result">{resultText}</p>
         </form>
     )
 };
