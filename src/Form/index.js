@@ -24,7 +24,7 @@ const Form = () => {
     };
 
 return (
-    <form onSubmit={onFormSubmit} className="form js-form">
+    <form onSubmit={onFormSubmit} className="form">
         <p>
             <label>
                 <strong className="form__inputDescription form__inputDescription--myAmount"
@@ -34,7 +34,7 @@ return (
                 <input
                     value={myAmount}
                     onChange={({ target }) => setMyAmount(target.value)}
-                    className="form__inputField form__inputField--myAmount js-form__myAmount"
+                    className="form__inputField form__inputField--myAmount"
                     type="number"
                     min="1"
                     step="0.01"
@@ -51,7 +51,7 @@ return (
                 <select
                     value={myCurrency}
                     onChange={({ target }) => setMyCurrency(target.value)}
-                    className="form__inputField js-form__myCurrency"
+                    className="form__inputField"
                 >
                     <option value="EUR">EUR - Euro</option>
                     <option value="NOK">NOK - Korona norweska</option>
@@ -66,7 +66,7 @@ return (
                 <select
                     value={wantedCurrency}
                     onChange={({ target }) => setWantedCurrency(target.value)}
-                    className="form__inputField js-form__wantedCurrency"
+                    className="form__inputField"
                 >
                     <option value="EUR">EUR - Euro</option>
                     <option value="NOK">NOK - Korona norweska</option>
@@ -86,7 +86,7 @@ return (
                 value={rateOption}
                 onChange={onRateOptionChange}
                 id="selectRate"
-                className="form__inputField form__inputField--select js-form__selectRate"
+                className="form__inputField form__inputField--select"
             >
                 <option value="defaultRate">Kurs domyślny</option>
                 <option value="ownRate">Kurs własny</option>
@@ -101,7 +101,7 @@ return (
                 value={exchangeRate}
                 onChange={({ target }) => setExchangeRate(target.value)}
                 id="exchangeRate"
-                className="form__inputField form__inputField--exchangeRate js-form__exchangeRate"
+                className="form__inputField form__inputField--exchangeRate"
                 type="number"
                 min="0.01"
                 step="0.0001"
@@ -123,7 +123,7 @@ return (
         <p>
             <button className="form__button">Przelicz!</button>
         </p>
-        <p className="form__result js-form__finalResult">{result}</p>
+        <p className="form__result">{result}</p>
     </form>
 )
 };
