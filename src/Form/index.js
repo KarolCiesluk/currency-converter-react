@@ -28,13 +28,15 @@ const Form = () => {
         }
     ];
 
-    const calculateResult = () => {
-        const finalRate = customRate ?
+    const calculateExchangeRate = () => {
+        return customRate ?
             customRate :
             (defaultRates.find(({ name }) => name === wantedCurrency).rate) /
             (defaultRates.find(({ name }) => name === myCurrency).rate);
+    };
 
-        const result = (myAmount / finalRate);
+    const calculateResult = () => {
+        const result = (myAmount / calculateExchangeRate());
         return Number.isInteger(result) ? result : result.toFixed(2);
     };
 
