@@ -36,7 +36,7 @@
     width: 146px;
 }
 
-.form__inputField--exchangeRate:disabled {
+.form__inputField--customRate:disabled {
     cursor: not-allowed;
     background-color: transparent;    
 }   

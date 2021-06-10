@@ -7,10 +7,37 @@ const Form = () => {
     const [myCurrency, setMyCurrency] = useState("PLN");
     const [wantedCurrency, setWantedCurrency] = useState("EUR");
     const [rateOption, setRateOption] = useState("defaultRate");
-    const [exchangeRate, setExchangeRate] = useState("");
+    const [customRate, setCustomRate] = useState("");
+
+    const defaultRates = [
+        {
+            name: "EUR",
+            rate: 4.5654,
+        },
+        {
+            name: "NOK",
+            rate: 0.4588,
+        },
+        {
+            name: "USD",
+            rate: 3.7746,
+        },
+        {
+            name: "PLN",
+            rate: 1,
+        }
+    ];
+
+    const calculateResult = () => {
+        console.log((myAmount * defaultRates.find(({ name }) => name === myCurrency).rate) / (defaultRates.find(({name}) => name === wantedCurrency).rate));
+
+        
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        
+
         // setResult(calculateResult());
     };
 
@@ -19,7 +46,7 @@ const Form = () => {
         setRateOption(chosenRateOption);
 
         if (chosenRateOption === "defaultRate") {
-            setExchangeRate("");
+            setCustomRate("");
         }
     };
 
@@ -28,18 +55,18 @@ const Form = () => {
         setMyCurrency(target.value);
 
         if (target.value === wantedCurrency) {
-            setWantedCurrency(previousMyCurrency); 
+            setWantedCurrency(previousMyCurrency);
         }
     };
 
     const onWantedCurrencyChange = ({ target }) => {
         const previousWantedCurrency = wantedCurrency;
         setWantedCurrency(target.value);
-        
+
         if (target.value === myCurrency) {
-            setMyCurrency(previousWantedCurrency); 
+            setMyCurrency(previousWantedCurrency);
         }
-    }
+    };
 
     return (
         <form onSubmit={onFormSubmit} className="form">
@@ -107,19 +134,19 @@ const Form = () => {
                     className="form__inputField form__inputField--select"
                 >
                     <option value="defaultRate">Kurs domyślny</option>
-                    <option value="ownRate">Kurs własny</option>
+                    <option value="customRate">Kurs własny</option>
                 </select>
                 <label
-                    htmlFor="exchangeRate"
+                    htmlFor="customRate"
                     className="form__screenReaderOnly"
                 >
                     Wysokość kursu
                 </label>
                 <input
-                    value={exchangeRate}
-                    onChange={({ target }) => setExchangeRate(target.value)}
-                    id="exchangeRate"
-                    className="form__inputField form__inputField--exchangeRate"
+                    value={customRate}
+                    onChange={({ target }) => setCustomRate(target.value)}
+                    id="customRate"
+                    className="form__inputField form__inputField--customRate"
                     type="number"
                     min="0.01"
                     step="0.0001"
