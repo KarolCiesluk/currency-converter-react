@@ -36,7 +36,7 @@
     width: 146px;
 }
 
-.form__inputField--notAllowed {
+.form__inputField--exchangeRate:disabled {
     cursor: not-allowed;
     background-color: transparent;    
 }   
