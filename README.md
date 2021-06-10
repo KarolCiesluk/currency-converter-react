@@ -2,9 +2,15 @@
 
 ![Currency converter logo](public/readmeImage.png)
 
+## Table of Contents
+1. [Demo](#demo) 
+2. [Desctiption](#description)
+3. [Technologies](#technologies)
+4. [Available Scripts](#available-scripts)
+
 ## Demo
 
-https://karolciesluk.github.io/currency-converter/
+https://karolciesluk.github.io/currency-converter-react/
 
 ![How to use demonstration](public/converterDemo.gif)
 
