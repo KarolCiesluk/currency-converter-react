@@ -26,6 +26,7 @@ const Form = () => {
     const onMyCurrencyChange = ({ target }) => {
         const previousMyCurrency = myCurrency;
         setMyCurrency(target.value);
+
         if (target.value === wantedCurrency) {
             setWantedCurrency(previousMyCurrency); 
         }
@@ -34,6 +35,7 @@ const Form = () => {
     const onWantedCurrencyChange = ({ target }) => {
         const previousWantedCurrency = wantedCurrency;
         setWantedCurrency(target.value);
+        
         if (target.value === myCurrency) {
             setMyCurrency(previousWantedCurrency); 
         }
