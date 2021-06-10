@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./style.css";
 
 const Form = () => {
-    const [resultText, setResultText] = useState("");
     const [myAmount, setMyAmount] = useState("");
     const [myCurrency, setMyCurrency] = useState("PLN");
     const [wantedCurrency, setWantedCurrency] = useState("EUR");
     const [rateOption, setRateOption] = useState("defaultRate");
     const [customRate, setCustomRate] = useState("");
+    const [resultText, setResultText] = useState("");
 
     const defaultRates = [
         {
