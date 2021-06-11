@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Header = () => (
+const Header = ({ title }) => (
     <header>
-        <h1 className="header">Kalkulator walutowy</h1>
+        <h1 className="header">{title}</h1>
     </header>
 );
 
