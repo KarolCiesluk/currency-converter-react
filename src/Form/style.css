@@ -20,7 +20,11 @@
     }
 }
 
-.form__myAmountDescription {
+.form__inputDescription {
+    align-self: center;
+}
+
+.form__inputDescription--myAmount {
     font-weight: 600;
 }
 
@@ -40,8 +44,8 @@
 
 .form__inputField--customRate:disabled {
     cursor: not-allowed;
-    background-color: transparent;    
-}   
+    background-color: transparent;
+}
 
 .form__linkParagraph {
     font-size: 14px;
@@ -57,7 +61,7 @@
 }
 
 .form__link:focus {
-    font-weight: bold;  
+    font-weight: bold;
     outline: none;
 }
 

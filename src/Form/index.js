@@ -78,7 +78,7 @@ const Form = () => {
         <form onSubmit={onFormSubmit} className="form">
             <p>
                 <label className="form__gridContainer">
-                    <strong className="form__myAmountDescription">
+                    <strong className="form__inputDescription form__inputDescription--myAmount">
                         Kwota:
                     </strong>
                     <input
@@ -95,7 +95,7 @@ const Form = () => {
             </p>
             <p>
                 <label className="form__gridContainer">
-                        Przelicz z:
+                    <span className="form__inputDescription">Przelicz z:</span>
                     <select
                         value={myCurrency}
                         onChange={onMyCurrencyChange}
@@ -110,7 +110,7 @@ const Form = () => {
             </p>
             <p>
                 <label className="form__gridContainer">
-                        Przelicz na:
+                    <span className="form__inputDescription">Przelicz na:</span>
                     <select
                         value={wantedCurrency}
                         onChange={onWantedCurrencyChange}
@@ -123,7 +123,7 @@ const Form = () => {
                     </select>
                 </label>
             </p>
-            <p  className="form__gridContainer">
+            <p className="form__gridContainer">
                 <label
                     htmlFor="selectRate"
                     className="form__screenReaderOnly"
