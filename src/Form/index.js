@@ -12,18 +12,22 @@ const Form = () => {
     const defaultRates = [
         {
             name: "EUR",
+            fullname: "Euro",
             rate: 4.5654,
         },
         {
             name: "NOK",
+            fullname: "Korona norweska",
             rate: 0.4588,
         },
         {
             name: "USD",
+            fullname: "Dolar amerykański",
             rate: 3.7746,
         },
         {
             name: "PLN",
+            fullname: "Polski złoty",
             rate: 1,
         }
     ];
