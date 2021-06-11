@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+import {currencies} from "../currencies";
 
 const Form = () => {
     const [myAmount, setMyAmount] = useState("");
@@ -8,30 +9,6 @@ const Form = () => {
     const [rateOption, setRateOption] = useState("defaultRate");
     const [customRate, setCustomRate] = useState("");
     const [resultText, setResultText] = useState("");
-
-    const currencies = [
-        {
-            name: "EUR",
-            fullName: "Euro",
-            rate: 4.5654,
-        },
-        {
-            name: "NOK",
-            fullName: "Korona norweska",
-            rate: 0.4588,
-        },
-        {
-            name: "USD",
-            fullName: "Dolar amerykański",
-            rate: 3.7746,
-        },
-        {
-            name: "PLN",
-            fullName: "Polski złoty",
-            rate: 1,
-        }
-    ];
-
 
     const calculateExchangeRate = () => {
         return customRate ?
