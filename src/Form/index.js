@@ -78,7 +78,7 @@ const Form = () => {
         <form onSubmit={onFormSubmit} className="form">
             <p>
                 <label className="form__gridContainer">
-                    <strong className="form__inputDescription form__inputDescription--myAmount">
+                    <strong className="form__myAmountDescription">
                         Kwota:
                     </strong>
                     <input
