@@ -77,7 +77,7 @@ const Form = () => {
     return (
         <form onSubmit={onFormSubmit} className="form">
             <p>
-                <label>
+                <label className="form__gridContainer">
                     <strong className="form__inputDescription form__inputDescription--myAmount">
                         Kwota:
                     </strong>
@@ -94,10 +94,8 @@ const Form = () => {
                 </label>
             </p>
             <p>
-                <label>
-                    <span className="form__inputDescription">
+                <label className="form__gridContainer">
                         Przelicz z:
-                    </span>
                     <select
                         value={myCurrency}
                         onChange={onMyCurrencyChange}
@@ -111,10 +109,8 @@ const Form = () => {
                 </label>
             </p>
             <p>
-                <label>
-                    <span className="form__inputDescription">
+                <label className="form__gridContainer">
                         Przelicz na:
-                    </span>
                     <select
                         value={wantedCurrency}
                         onChange={onWantedCurrencyChange}
@@ -127,7 +123,7 @@ const Form = () => {
                     </select>
                 </label>
             </p>
-            <p>
+            <p  className="form__gridContainer">
                 <label
                     htmlFor="selectRate"
                     className="form__screenReaderOnly"
@@ -138,7 +134,7 @@ const Form = () => {
                     value={rateOption}
                     onChange={onRateOptionChange}
                     id="selectRate"
-                    className="form__inputField form__inputField--select"
+                    className="form__inputField"
                 >
                     <option value="defaultRate">Kurs domyślny</option>
                     <option value="customRate">Kurs własny</option>
@@ -158,7 +154,8 @@ const Form = () => {
                     min="0.01"
                     step="0.0001"
                     disabled={rateOption === "defaultRate" ? true : false}
-                    required />
+                    required
+                />
             </p>
             <p className="form__linkParagraph">
                 <a
