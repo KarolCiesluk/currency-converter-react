@@ -9,34 +9,35 @@ const Form = () => {
     const [customRate, setCustomRate] = useState("");
     const [resultText, setResultText] = useState("");
 
-    const defaultRates = [
+    const currencies = [
         {
             name: "EUR",
-            fullname: "Euro",
+            fullName: "Euro",
             rate: 4.5654,
         },
         {
             name: "NOK",
-            fullname: "Korona norweska",
+            fullName: "Korona norweska",
             rate: 0.4588,
         },
         {
             name: "USD",
-            fullname: "Dolar amerykański",
+            fullName: "Dolar amerykański",
             rate: 3.7746,
         },
         {
             name: "PLN",
-            fullname: "Polski złoty",
+            fullName: "Polski złoty",
             rate: 1,
         }
     ];
 
+
     const calculateExchangeRate = () => {
         return customRate ?
             customRate :
-            (defaultRates.find(({ name }) => name === wantedCurrency).rate) /
-            (defaultRates.find(({ name }) => name === myCurrency).rate);
+            (currencies.find(({ name }) => name === wantedCurrency).rate) /
+            (currencies.find(({ name }) => name === myCurrency).rate);
     };
 
     const calculateResult = () => {
@@ -105,10 +106,9 @@ const Form = () => {
                         onChange={onMyCurrencyChange}
                         className="form__inputField"
                     >
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="NOK">NOK - Korona norweska</option>
-                        <option value="USD">USD - Amerykański dolar</option>
-                        <option value="PLN">PLN - Polski złoty</option>
+                        {currencies.map(({ name, fullName }) => (
+                            <option key={name} value={name}>{name} - {fullName}</option>
+                        ))}
                     </select>
                 </label>
             </p>
@@ -120,10 +120,9 @@ const Form = () => {
                         onChange={onWantedCurrencyChange}
                         className="form__inputField"
                     >
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="NOK">NOK - Korona norweska</option>
-                        <option value="USD">USD - Amerykański dolar</option>
-                        <option value="PLN">PLN - Polski złoty</option>
+                        {currencies.map(({ name, fullName }) => (
+                            <option key={name} value={name}>{name} - {fullName}</option>
+                        ))}
                     </select>
                 </label>
             </p>
