@@ -32,6 +32,7 @@ The Currency converter was made during [YouCode](https://youcode.pl/frontend-dev
 ## Technologies
 - HTML
 - Javascript
+- React
 - Babel
 - JSX
 - CSS
