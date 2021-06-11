@@ -8,7 +8,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <>
-      <Header />
+      <Header title="Kalkulator walutowy" />
       <Main>
         <Form />
       </Main>
