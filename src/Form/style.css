@@ -9,7 +9,7 @@
 
 .form__gridContainer {
     display: grid;
-    grid-template-columns: 146px 1fr;
+    grid-template-columns: 160px 1fr;
     grid-gap: 4px;
     grid-auto-rows: 30px;
 }
