@@ -1,5 +1,5 @@
 .form {
-    padding: 18px 2%;
+    padding: 18px 10%;
     border-radius: 30px;
     text-align: center;
     line-height: 1.6;
@@ -7,9 +7,16 @@
     background-color: #f2f3f4d9;
 }
 
-.form__inputDescription {
-    display: inline-block;
-    width: 146px;
+.form__gridContainer {
+    display: grid;
+    grid-template-columns: 146px 1fr;
+    grid-gap: 4px;
+}
+
+@media (max-width: 520px) {
+    .form__gridContainer {
+        grid-template-columns: 1fr;
+    }
 }
 
 .form__inputDescription--myAmount {
@@ -18,8 +25,6 @@
 
 .form__inputField {
     border-radius: 5px;
-    width: 230px;
-    box-sizing: border-box;
     color: #2F4858;
     background-color: #fcfcfc;
 }
@@ -30,10 +35,6 @@
 
 .form__inputField--myAmount {
     font-weight: 600;
-}
-
-.form__inputField--select {
-    width: 146px;
 }
 
 .form__inputField--customRate:disabled {
@@ -98,7 +99,6 @@
 }
 
 .form__result {
-    text-align: center;
     color: hsl(3, 63%, 48%);
     font-size: 25px;
     font-weight: bold;
