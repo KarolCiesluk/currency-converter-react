@@ -102,5 +102,5 @@
     color: hsl(3, 63%, 48%);
     font-size: 25px;
     font-weight: bold;
-    height: 25px;
+    min-height: 25px;
 }
