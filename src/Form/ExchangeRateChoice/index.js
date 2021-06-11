@@ -5,7 +5,7 @@ const ExchangeRateChoice = ({ rateOption, onRateOptionChange, customRate, setCus
             className="form__screenReaderOnly"
         >
             Ustawienia kursu
-                </label>
+        </label>
         <select
             value={rateOption}
             onChange={onRateOptionChange}
@@ -20,7 +20,7 @@ const ExchangeRateChoice = ({ rateOption, onRateOptionChange, customRate, setCus
             className="form__screenReaderOnly"
         >
             Wysokość kursu
-                </label>
+        </label>
         <input
             value={customRate}
             onChange={({ target }) => setCustomRate(target.value)}

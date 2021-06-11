@@ -16,25 +16,6 @@ const Form = () => {
     const [customRate, setCustomRate] = useState("");
     const [resultText, setResultText] = useState("");
 
-    const calculateExchangeRate = () => {
-        return customRate ?
-            customRate :
-            (currencies.find(({ name }) => name === wantedCurrency).rate) /
-            (currencies.find(({ name }) => name === myCurrency).rate);
-    };
-
-    const calculateResult = () => {
-        const result = (myAmount / calculateExchangeRate());
-        return Number.isInteger(result) ? result : result.toFixed(2);
-    };
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-
-        const finalAmount = calculateResult();
-        setResultText(`${myAmount} ${myCurrency} = ${finalAmount} ${wantedCurrency}`);
-    };
-
     const onRateOptionChange = ({ target }) => {
         const chosenRateOption = target.value;
         setRateOption(chosenRateOption);
@@ -60,6 +41,25 @@ const Form = () => {
         if (target.value === myCurrency) {
             setMyCurrency(previousWantedCurrency);
         }
+    };
+
+    const calculateExchangeRate = () => {
+        return customRate ?
+            customRate :
+            (currencies.find(({ name }) => name === wantedCurrency).rate) /
+            (currencies.find(({ name }) => name === myCurrency).rate);
+    };
+
+    const calculateResult = () => {
+        const result = (myAmount / calculateExchangeRate());
+        return Number.isInteger(result) ? result : result.toFixed(2);
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const finalAmount = calculateResult();
+        setResultText(`${myAmount} ${myCurrency} = ${finalAmount} ${wantedCurrency}`);
     };
 
     return (
