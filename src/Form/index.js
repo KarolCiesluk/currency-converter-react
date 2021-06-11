@@ -1,6 +1,12 @@
 import { useState } from "react";
 import "./style.css";
 import { currencies } from "./currencies/currencies";
+import MyAmount from "./MyAmount";
+import CurrencySelect from "./CurrencySelect";
+import ExchangeRateChoice from "./ExchangeRateChoice";
+import Link from "./Link";
+import SubmitButton from "./SubmitButton";
+import Result from "./Result";
 
 const Form = () => {
     const [myAmount, setMyAmount] = useState("");
@@ -58,101 +64,28 @@ const Form = () => {
 
     return (
         <form onSubmit={onFormSubmit} className="form">
-            <p>
-                <label className="form__gridContainer">
-                    <strong className="form__inputDescription form__inputDescription--myAmount">
-                        Kwota:
-                    </strong>
-                    <input
-                        value={myAmount}
-                        onChange={({ target }) => setMyAmount(target.value)}
-                        className="form__inputField form__inputField--myAmount"
-                        type="number"
-                        min="1"
-                        step="0.01"
-                        autoFocus
-                        required
-                    />
-                </label>
-            </p>
-            <p>
-                <label className="form__gridContainer">
-                    <span className="form__inputDescription">Przelicz z:</span>
-                    <select
-                        value={myCurrency}
-                        onChange={onMyCurrencyChange}
-                        className="form__inputField"
-                    >
-                        {currencies.map(({ name, fullName }) => (
-                            <option key={name} value={name}>{name} - {fullName}</option>
-                        ))}
-                    </select>
-                </label>
-            </p>
-            <p>
-                <label className="form__gridContainer">
-                    <span className="form__inputDescription">Przelicz na:</span>
-                    <select
-                        value={wantedCurrency}
-                        onChange={onWantedCurrencyChange}
-                        className="form__inputField"
-                    >
-                        {currencies.map(({ name, fullName }) => (
-                            <option key={name} value={name}>{name} - {fullName}</option>
-                        ))}
-                    </select>
-                </label>
-            </p>
-            <p className="form__gridContainer">
-                <label
-                    htmlFor="selectRate"
-                    className="form__screenReaderOnly"
-                >
-                    Ustawienia kursu
-                </label>
-                <select
-                    value={rateOption}
-                    onChange={onRateOptionChange}
-                    id="selectRate"
-                    className="form__inputField"
-                >
-                    <option value="defaultRate">Kurs domyślny</option>
-                    <option value="customRate">Kurs własny</option>
-                </select>
-                <label
-                    htmlFor="customRate"
-                    className="form__screenReaderOnly"
-                >
-                    Wysokość kursu
-                </label>
-                <input
-                    value={customRate}
-                    onChange={({ target }) => setCustomRate(target.value)}
-                    id="customRate"
-                    className="form__inputField form__inputField--customRate"
-                    type="number"
-                    min="0.01"
-                    step="0.0001"
-                    disabled={rateOption === "defaultRate" ? true : false}
-                    required
-                />
-            </p>
-            <p className="form__linkParagraph">
-                <a
-                    className="form__link"
-                    href="https://www.money.pl/pieniadze/nbp/srednie/"
-                    target="_blank"
-                    title="Kursy walut money.pl"
-                    rel="noreferrer noopener"
-                >
-                    Zobacz
-                    tabelę kursów NBP
-                </a> (otwiera się w nowej karcie)
-            </p>
-            <p>
-                <button className="form__button">Przelicz!</button>
-            </p>
-            <p className="form__result">{resultText}</p>
+            <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
+            <CurrencySelect
+                currency={myCurrency}
+                description="Przelicz z:"
+                onCurrencyChange={onMyCurrencyChange}
+                currencies={currencies}
+            />
+            <CurrencySelect
+                currency={wantedCurrency}
+                description="Przelicz na:"
+                onCurrencyChange={onWantedCurrencyChange}
+                currencies={currencies}
+            />
+            <ExchangeRateChoice
+                rateOption={rateOption}
+                onRateOptionChange={onRateOptionChange}
+                customRate={customRate}
+                setCustomRate={setCustomRate}
+            />
+            <Link />
+            <SubmitButton buttonText="Przelicz!" />
+            <Result resultText={resultText} />
         </form>
     );
 };
