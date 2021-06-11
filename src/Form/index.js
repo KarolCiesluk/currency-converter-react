@@ -66,14 +66,14 @@ const Form = () => {
         <form onSubmit={onFormSubmit} className="form">
             <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
             <CurrencySelect
-                currency={myCurrency}
                 description="Przelicz z:"
+                currency={myCurrency}
                 onCurrencyChange={onMyCurrencyChange}
                 currencies={currencies}
             />
             <CurrencySelect
-                currency={wantedCurrency}
                 description="Przelicz na:"
+                currency={wantedCurrency}
                 onCurrencyChange={onWantedCurrencyChange}
                 currencies={currencies}
             />
