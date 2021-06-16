@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./style.css";
-import { currencies } from "./currencies/currencies";
+import { currencies } from "./currencies";
 import MyAmount from "./MyAmount";
 import CurrencySelect from "./CurrencySelect";
 import ExchangeRateChoice from "./ExchangeRateChoice";
