@@ -51,7 +51,7 @@ const Form = () => {
     };
 
     const calculateResult = () => {
-        const result = (myAmount / calculateExchangeRate());
+        const result = myAmount / calculateExchangeRate();
         return Number.isInteger(result) ? result : result.toFixed(2);
     };
 
