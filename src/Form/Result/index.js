@@ -7,7 +7,7 @@ const Result = ({ resultData }) => {
         );
     }
 
-    return null;
+    return <p className="form__result" />;
 };
 
 export default Result;
