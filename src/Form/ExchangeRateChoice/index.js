@@ -29,7 +29,7 @@ const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setC
             type="number"
             min="0.01"
             step="0.0001"
-            disabled={isCustomRate ? false : true}
+            disabled={!isCustomRate}
             required
         />
     </p>
