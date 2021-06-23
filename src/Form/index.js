@@ -79,13 +79,11 @@ const Form = () => {
         description="Przelicz z:"
         currency={myCurrency}
         onCurrencyChange={onMyCurrencyChange}
-        currencies={currencies}
       />
       <CurrencySelect
         description="Przelicz na:"
         currency={wantedCurrency}
         onCurrencyChange={onWantedCurrencyChange}
-        currencies={currencies}
       />
       <ExchangeRateChoice
         isCustomRate={isCustomRate}

@@ -1,4 +1,6 @@
-const CurrencySelect = ({ description, currency, onCurrencyChange, currencies }) => (
+import { currencies } from "../currencies";
+
+const CurrencySelect = ({ description, currency, onCurrencyChange}) => (
     <p>
         <label className="form__gridContainer">
             <span className="form__inputDescription">{description}</span>
