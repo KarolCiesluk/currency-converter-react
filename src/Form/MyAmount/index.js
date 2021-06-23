@@ -1,9 +1,9 @@
 const MyAmount = ({ myAmount, setMyAmount }) => (
     <p>
         <label className="form__gridContainer">
-            <strong className="form__inputDescription form__inputDescription--myAmount">
+            <span className="form__inputDescription form__inputDescription--myAmount">
                 Kwota:
-            </strong>
+            </span>
             <input
                 value={myAmount}
                 onChange={({ target }) => setMyAmount(target.value)}
