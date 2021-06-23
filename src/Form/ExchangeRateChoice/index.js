@@ -1,4 +1,4 @@
-const ExchangeRateChoice = ({ rateOption, onRateOptionChange, customRate, setCustomRate }) => (
+const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setCustomRate }) => (
     <p className="form__gridContainer">
         <label
             htmlFor="selectRate"
@@ -7,13 +7,13 @@ const ExchangeRateChoice = ({ rateOption, onRateOptionChange, customRate, setCus
             Ustawienia kursu
         </label>
         <select
-            value={rateOption}
+            value={isCustomRate}
             onChange={onRateOptionChange}
             id="selectRate"
             className="form__inputField"
         >
-            <option value="defaultRate">Kurs domyślny</option>
-            <option value="customRate">Kurs własny</option>
+            <option value={false}>Kurs domyślny</option>
+            <option value={true}>Kurs własny</option>
         </select>
         <label
             htmlFor="customRate"
@@ -29,7 +29,7 @@ const ExchangeRateChoice = ({ rateOption, onRateOptionChange, customRate, setCus
             type="number"
             min="0.01"
             step="0.0001"
-            disabled={rateOption === "defaultRate" ? true : false}
+            disabled={isCustomRate ? false : true}
             required
         />
     </p>

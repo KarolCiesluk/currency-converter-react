@@ -12,15 +12,15 @@ const Form = () => {
     const [myAmount, setMyAmount] = useState("");
     const [myCurrency, setMyCurrency] = useState("PLN");
     const [wantedCurrency, setWantedCurrency] = useState("EUR");
-    const [rateOption, setRateOption] = useState("defaultRate");
+    const [isCustomRate, setIsCustomRate] = useState(false);
     const [customRate, setCustomRate] = useState("");
     const [resultText, setResultText] = useState("");
 
     const onRateOptionChange = ({ target }) => {
-        const chosenRateOption = target.value;
-        setRateOption(chosenRateOption);
+        const chosenRateOption = (target.value === "true");
+        setIsCustomRate(chosenRateOption);
 
-        if (chosenRateOption === "defaultRate") {
+        if (!chosenRateOption) {
             setCustomRate("");
         }
     };
@@ -78,7 +78,7 @@ const Form = () => {
                 currencies={currencies}
             />
             <ExchangeRateChoice
-                rateOption={rateOption}
+                isCustomRate={isCustomRate}
                 onRateOptionChange={onRateOptionChange}
                 customRate={customRate}
                 setCustomRate={setCustomRate}
