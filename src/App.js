@@ -6,7 +6,9 @@ import Footer from "./Footer";
 function App() {
   return (
     <>
-      <Header title="Kalkulator walutowy" />
+      <Header>
+        Kalkulator walutowy
+      </Header>
       <Main>
         <Form />
       </Main>
