@@ -1,13 +1,7 @@
-const Result = ({ resultData }) => {
-    if (resultData.finalAmount) {
-        return (
-            <p className="form__result">
-                {resultData.myAmount}{resultData.myCurrency} = {resultData.finalAmount}{resultData.wantedCurrency}
-            </p>
-        );
-    }
-
-    return <p className="form__result" />;
-};
+const Result = ({ resultData }) => (
+    <p className="form__result">
+        {resultData.finalAmount ? `${resultData.myAmount}${resultData.myCurrency} = ${resultData.finalAmount}${resultData.wantedCurrency}` : ""}
+    </p>
+);
 
 export default Result;
