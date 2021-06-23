@@ -104,4 +104,5 @@
     font-weight: bold;
     min-height: 40px;
     margin: 0;
+    word-break: break-word;
 }
