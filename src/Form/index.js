@@ -14,7 +14,7 @@ const Form = () => {
   const [wantedCurrency, setWantedCurrency] = useState("EUR");
   const [isCustomRate, setIsCustomRate] = useState(false);
   const [customRate, setCustomRate] = useState("");
-  const [resultData, setResultData] = useState({});
+  const [resultData, setResultData] = useState();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
