@@ -44,7 +44,7 @@ const Form = () => {
   };
 
   const calculateExchangeRate = () => {
-    if (customRate) {
+    if (isCustomRate) {
       return customRate;
     }
 
