@@ -65,7 +65,6 @@ const Form = () => {
     const finalAmount = calculateResult();
 
     setResultData({
-      ...resultData,
       myAmount,
       myCurrency,
       finalAmount,
