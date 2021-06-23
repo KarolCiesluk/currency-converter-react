@@ -44,10 +44,14 @@ const Form = () => {
     };
 
     const calculateExchangeRate = () => {
-        return customRate ?
-            customRate :
-            (currencies.find(({ name }) => name === wantedCurrency).rate) /
-            (currencies.find(({ name }) => name === myCurrency).rate);
+        if (customRate) {
+            return customRate;
+        }
+
+        const wantedCurrencyRate = currencies.find(({ name }) => name === wantedCurrency).rate;
+        const myCurrencyRate = currencies.find(({ name }) => name === myCurrency).rate;
+
+        return wantedCurrencyRate / myCurrencyRate;
     };
 
     const calculateResult = () => {
