@@ -1,6 +1,6 @@
 # Currency converter
 
-![Currency converter logo](public/readmeImage.png)
+![Currency converter logo](./readmeImage.png)
 
 ## Table of Contents
 1. [Demo](#demo) 
