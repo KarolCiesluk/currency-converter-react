@@ -13,27 +13,28 @@ const Time = () => {
   }, []);
 
   useEffect(() => {
-    const currentDateTime = date.toJSON();
-    const currentTime = date.toLocaleTimeString();
     const currentDay = date.toLocaleDateString(
       undefined,
       {
         weekday: "long",
         day: "numeric",
         month: "long",
-      });
+      }
+    );
+    const currentTime = date.toLocaleTimeString();
+    const currentJSONDate = date.toJSON();
 
     setCurrentDateData({
-      currentDateTime,
-      currentTime,
       currentDay,
+      currentTime,
+      currentJSONDate,
     });
   }, [date]);
 
   return (
     <p className="form__time">
       Dzisiaj jest{" "}
-      <time dateTime={currentDateData.currentDateTime}>
+      <time dateTime={currentDateData.currentJSONDate}>
         {currentDateData.currentDay}, {currentDateData.currentTime}
       </time>
     </p>
