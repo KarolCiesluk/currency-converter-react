@@ -7,6 +7,12 @@
     background-color: #f2f3f4d9;
 }
 
+.form__time {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    text-align: right;
+}
+
 .form__gridContainer {
     display: grid;
     grid-template-columns: 160px 1fr;
