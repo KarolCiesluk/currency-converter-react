@@ -13,7 +13,6 @@ const Time = () => {
           weekday: "long",
           day: "numeric",
           month: "long",
-          year: "numeric"
         }
       );
       const currentTime = currentDate.toLocaleTimeString();
@@ -31,7 +30,7 @@ const Time = () => {
 
   if (date) {
     return (
-      <p>
+      <p className="form__time">
         Dzisiaj jest{" "}
         <time dateTime={date.currentDateTime}>
           {date.currentDay}, {date.currentTime}
@@ -40,7 +39,7 @@ const Time = () => {
     );
   }
 
-  return <p></p>;
+  return null;
 };
 
 export default Time;
