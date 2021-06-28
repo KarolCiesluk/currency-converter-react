@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 import { currencies } from "./currencies";
+import Time from "./Time";
 import MyAmount from "./MyAmount";
 import CurrencySelect from "./CurrencySelect";
 import ExchangeRateChoice from "./ExchangeRateChoice";
@@ -74,6 +75,7 @@ const Form = () => {
 
   return (
     <form onSubmit={onFormSubmit} className="form">
+      <Time />
       <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
       <CurrencySelect
         description="Przelicz z:"
