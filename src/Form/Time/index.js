@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 
 const Time = () => {
   const [date, setDate] = useState(new Date());
-  // const [currentDay, setCurrentDay] = useState();
-  // const [currentTime, setCurrentTime] = useState();
-  // const [currentDateTime, setCurrentDateTime] = useState();
   const [currentDateData, setCurrentDateData] = useState({});
 
   useEffect(() => {
@@ -16,17 +13,6 @@ const Time = () => {
   }, []);
 
   useEffect(() => {
-    // setCurrentDay(date.toLocaleDateString(
-    // undefined,
-    // {
-    //   weekday: "long",
-    //   day: "numeric",
-    //   month: "long",
-    //   }));
-
-    //   setCurrentTime(date.toLocaleTimeString());
-
-    //   setCurrentDateTime(date.toJSON());
     const currentDateTime = date.toJSON();
     const currentTime = date.toLocaleTimeString();
     const currentDay = date.toLocaleDateString(
