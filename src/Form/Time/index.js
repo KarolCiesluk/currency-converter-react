@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
 
+const formatDate = (date) => {
+  return date.toLocaleDateString(undefined, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+};
+
 const Time = () => {
   const [date, setDate] = useState(new Date());
 
@@ -13,19 +24,10 @@ const Time = () => {
 
   return (
     <p className="form__time">
-      Dzisiaj jest{" "}
+      Dzisiaj jest
+      {" "}
       <time dateTime={date.toJSON()}>
-        {date.toLocaleDateString(
-          undefined,
-          {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-          }
-        )}
+        {formatDate(date)}
       </time>
     </p>
   );
