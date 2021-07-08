@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { currencies } from "./currencies";
 import Time from "./Time";
-import MyAmount from "./MyAmount";
-import CurrencySelect from "./CurrencySelect";
-import ExchangeRateChoice from "./ExchangeRateChoice";
+import FormControls from "./FormControls";
 import Link from "./Link";
 import SubmitButton from "./SubmitButton";
 import Result from "./Result";
@@ -77,18 +75,13 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Time />
-      <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
-      <CurrencySelect
-        description="Przelicz z:"
-        currency={myCurrency}
-        onCurrencyChange={onMyCurrencyChange}
-      />
-      <CurrencySelect
-        description="Przelicz na:"
-        currency={wantedCurrency}
-        onCurrencyChange={onWantedCurrencyChange}
-      />
-      <ExchangeRateChoice
+      <FormControls
+        myAmount={myAmount}
+        setMyAmount={setMyAmount}
+        myCurrency={myCurrency}
+        onMyCurrencyChange={onMyCurrencyChange}
+        wantedCurrency={wantedCurrency}
+        onWantedCurrencyChange={onWantedCurrencyChange}
         isCustomRate={isCustomRate}
         onRateOptionChange={onRateOptionChange}
         customRate={customRate}
