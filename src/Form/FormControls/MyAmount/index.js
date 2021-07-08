@@ -1,8 +1,10 @@
+import { InputDescription } from "./styled";
+
 const MyAmount = ({ description, myAmount, setMyAmount }) => (
     <label className="form__gridContainer">
-        <span className="form__inputDescription form__inputDescription--myAmount">
+        <InputDescription>
             {description}
-        </span>
+        </InputDescription>
         <input
             value={myAmount}
             onChange={({ target }) => setMyAmount(target.value)}

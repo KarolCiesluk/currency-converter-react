@@ -27,13 +27,13 @@
     }
 }
 
-.form__inputDescription {
+/* .form__inputDescription {
     align-self: center;
 }
 
 .form__inputDescription--myAmount {
     font-weight: 600;
-}
+} */
 
 .form__inputField {
     border-radius: 5px;
