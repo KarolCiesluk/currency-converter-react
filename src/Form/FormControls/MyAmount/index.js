@@ -1,21 +1,21 @@
-import { InputDescription } from "./styled";
+import { GridContainer, InputDescription, InputField } from "./styled";
 
 const MyAmount = ({ description, myAmount, setMyAmount }) => (
-    <label className="form__gridContainer">
+    <GridContainer>
         <InputDescription>
             {description}
         </InputDescription>
-        <input
+        <InputField
             value={myAmount}
             onChange={({ target }) => setMyAmount(target.value)}
-            className="form__inputField form__inputField--myAmount"
+            myAmount
             type="number"
             min="1"
             step="0.01"
             autoFocus
             required
         />
-    </label>
+    </GridContainer>
 );
 
 export default MyAmount;
