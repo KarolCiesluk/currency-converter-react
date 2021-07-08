@@ -1,12 +1,13 @@
+import { GridContainer, InputField, ScreenReaderLabel } from "../styled";
+
 const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setCustomRate }) => (
-    <p className="form__gridContainer">
-        <label
+    <GridContainer as="p">
+        <ScreenReaderLabel
             htmlFor="selectRate"
-            className="form__screenReaderOnly"
         >
             Ustawienia kursu
-        </label>
-        <select
+        </ScreenReaderLabel>
+        <InputField as="select"
             value={isCustomRate}
             onChange={onRateOptionChange}
             id="selectRate"
@@ -14,25 +15,24 @@ const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setC
         >
             <option value={false}>Kurs domyślny</option>
             <option value={true}>Kurs własny</option>
-        </select>
-        <label
+        </InputField>
+        <ScreenReaderLabel
             htmlFor="customRate"
-            className="form__screenReaderOnly"
         >
             Wysokość kursu
-        </label>
-        <input
+        </ScreenReaderLabel>
+        <InputField
             value={customRate}
             onChange={({ target }) => setCustomRate(target.value)}
             id="customRate"
-            className="form__inputField form__inputField--customRate"
+            customRate
             type="number"
             min="0.01"
             step="0.0001"
             disabled={!isCustomRate}
             required
         />
-    </p>
+    </GridContainer>
 );
 
 export default ExchangeRateChoice;

@@ -1,9 +1,10 @@
 import { currencies } from "../../currencies";
+import { GridContainer, InputDescription, InputField } from "../styled";
 
 const CurrencySelect = ({ description, currency, onCurrencyChange }) => (
-    <label className="form__gridContainer">
-        <span className="form__inputDescription">{description}</span>
-        <select
+    <GridContainer>
+        <InputDescription>{description}</InputDescription>
+        <InputField as="select"
             value={currency}
             onChange={onCurrencyChange}
             className="form__inputField"
@@ -11,8 +12,8 @@ const CurrencySelect = ({ description, currency, onCurrencyChange }) => (
             {currencies.map(({ name, fullName }) => (
                 <option key={name} value={name}>{name} - {fullName}</option>
             ))}
-        </select>
-    </label>
+        </InputField>
+    </GridContainer>
 );
 
 export default CurrencySelect;
