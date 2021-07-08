@@ -1,8 +1,8 @@
-import "./style.css";
+import { Title } from "./styled";
 
 const Header = ({ children }) => (
     <header>
-        <h1 className="header">{children}</h1>
+        <Title>{children}</Title>
     </header>
 );
 

@@ -1,4 +1,6 @@
-.header {
+import styled from "styled-components";
+
+export const Title = styled.h1`
     background-color: #2f4858f7;
     color: #fcfcfc;
     font-size: 40px;
@@ -6,4 +8,4 @@
     padding: 50px;
     text-align: center;
     line-height: 1;
-}
+`;
