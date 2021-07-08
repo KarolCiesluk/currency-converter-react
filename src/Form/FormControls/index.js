@@ -15,7 +15,11 @@ const FormControls = ({
     setCustomRate
 }) => (
     <>
-        <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
+        <MyAmount
+            description="Kwota:"
+            myAmount={myAmount}
+            setMyAmount={setMyAmount}
+        />
         <CurrencySelect
             description="Przelicz z:"
             currency={myCurrency}

@@ -1,7 +1,7 @@
-const MyAmount = ({ myAmount, setMyAmount }) => (
+const MyAmount = ({ description, myAmount, setMyAmount }) => (
     <label className="form__gridContainer">
         <span className="form__inputDescription form__inputDescription--myAmount">
-            Kwota:
+            {description}
         </span>
         <input
             value={myAmount}
