@@ -8,6 +8,7 @@ import ExchangeRateChoice from "./ExchangeRateChoice";
 import Link from "./Link";
 import SubmitButton from "./SubmitButton";
 import Result from "./Result";
+import { FormContainer } from "./styled";
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
@@ -74,7 +75,7 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className="form">
+    <FormContainer onSubmit={onFormSubmit}>
       <Time />
       <MyAmount myAmount={myAmount} setMyAmount={setMyAmount} />
       <CurrencySelect
@@ -96,7 +97,7 @@ const Form = () => {
       <Link />
       <SubmitButton buttonText="Przelicz!" />
       <Result resultData={resultData} />
-    </form>
+    </FormContainer>
   );
 };
 
