@@ -14,6 +14,7 @@
 }
 
 .form__gridContainer {
+    margin: 18px 0;
     display: grid;
     grid-template-columns: 160px 1fr;
     grid-gap: 4px;
