@@ -6,36 +6,36 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   headerColors: {
-    background: "#2f4858f7",
-    text: "#fcfcfc",
+    background: "#2f4858f7", // color 2a?
+    text: "#fcfcfc", // color 1
   },
   formColors: {
-    shadow: "#7a7a7a",
-    background: "#f2f3f4d9",
+    shadow: "#7a7a7a", // color 3
+    background: "#f2f3f4d9", // color 2b?
     formControlsColors: {
-      inputBackground: "#fcfcfc",
-      inputText: "#2F4858",
-      inputFocus: "hsl(208deg 100% 30%)",
-      customRateBackground: "transparent",
+      inputBackground: "#fcfcfc", // color 1
+      inputText: "#2F4858", // color 4
+      inputFocus: "hsl(208deg 100% 30%)", // color 5a
+      customRateBackground: "transparent", // color 6 (transparent)
     },
     linkColors: {
-      text: "hsl(208deg 100% 30%)",
-      active: "hsl(208deg 100% 45%)",
+      text: "hsl(208deg 100% 30%)", // color 5a
+      active: "hsl(208deg 100% 45%)", // color 5b
     },
     resultColors: {
-      text: "hsl(3, 63%, 48%)",
+      text: "hsl(3, 63%, 48%)", // color 7a
     },
     submitButtonColors: {
-      text: "#fcfcfc",
-      background: "hsl(3, 63%, 48%)",
-      hover: "hsl(3deg 100% 50%)",
-      focus: "hsl(3deg 100% 50%)",
-      active: "hsl(3, 63%, 58%)",
+      text: "#fcfcfc", // color 1
+      background: "hsl(3, 63%, 48%)", // color 7a
+      hover: "hsl(3deg 100% 50%)", // color 7b?
+      focus: "hsl(3deg 100% 50%)", // color 7b?
+      active: "hsl(3, 63%, 58%)", // color 7c?
     }
   },
   footerColors: {
-    border: "hsl(3, 63%, 48%)",
-    text: "hsl(3, 63%, 48%)",
+    border: "hsl(3, 63%, 48%)",  // color 7a
+    text: "hsl(3, 63%, 48%)", // color 7a
   },
 };
 
