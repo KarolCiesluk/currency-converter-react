@@ -7,11 +7,11 @@
     background-color: #f2f3f4d9;
 } */
 
-.form__time {
+/* .form__time {
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     text-align: right;
-}
+} */
 
 /* .form__gridContainer {
     margin: 18px 0;
@@ -54,7 +54,7 @@
     background-color: transparent;
 } */
 
-.form__linkParagraph {
+/* .form__linkParagraph {
     font-size: 14px;
 }
 
@@ -74,7 +74,7 @@
 
 .form__link:active {
     color: hsl(208deg 100% 45%);
-}
+} */
 
 /* .form__screenReaderOnly {
     opacity: 0;
