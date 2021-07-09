@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.p`
-    color: hsl(3, 63%, 48%);
+    color: ${({ theme }) => theme.persianRed.dark};
     font-size: 25px;
     font-weight: bold;
     min-height: 40px;
