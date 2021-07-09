@@ -1,6 +1,8 @@
+import { Button } from "./styled";
+
 const SubmitButton = ({ buttonText }) => (
     <p>
-        <button className="form__button">{buttonText}</button>
+        <Button>{buttonText}</Button>
     </p>
 );
 

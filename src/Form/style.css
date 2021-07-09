@@ -82,7 +82,7 @@
     position: absolute;
 } */
 
-.form__button {
+/* .form__button {
     padding: 12px 50px;
     background-color: hsl(3, 63%, 48%);
     color: #fcfcfc;
@@ -103,7 +103,7 @@
 
 .form__button:active {
     background-color: hsl(3, 63%, 58%);
-}
+} */
 
 .form__result {
     color: hsl(3, 63%, 48%);
