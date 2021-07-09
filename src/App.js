@@ -17,6 +17,6 @@ function App() {
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
 export default App;
