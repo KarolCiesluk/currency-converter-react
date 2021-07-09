@@ -2,7 +2,7 @@ import { GridContainer, InputDescription, InputField } from "../styled";
 
 const MyAmount = ({ description, myAmount, setMyAmount }) => (
     <GridContainer>
-        <InputDescription>
+        <InputDescription myAmount>
             {description}
         </InputDescription>
         <InputField
