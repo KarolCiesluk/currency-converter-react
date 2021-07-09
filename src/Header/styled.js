@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-    background-color: #2f4858f7;
-    color: #fcfcfc;
+    background-color: ${({ theme }) => theme.pickledBluewood.dark};
+    color: ${({ theme }) => theme.alabaster};
     font-size: 40px;
     margin-top: 0;
     padding: 50px;
