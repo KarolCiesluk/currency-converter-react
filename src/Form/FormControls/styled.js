@@ -22,18 +22,18 @@ export const InputDescription = styled.label`
 
 export const InputField = styled.input`
     border-radius: 5px;
-    color: #2F4858;
-    background-color: #fcfcfc;
+    color: ${({ theme }) => theme.pickledBluewood.light};
+    background-color: ${({ theme }) => theme.alabaster};
 
     &:focus {
-        outline-color: hsl(208deg 100% 30%);
+        outline-color: ${({ theme }) => theme.endeavour.dark};
     }
 
-    ${({myAmount}) => myAmount && css`
+    ${({ myAmount }) => myAmount && css`
         font-weight: 600;
     `}
 
-    ${({customRate}) => customRate && css`
+    ${({ customRate }) => customRate && css`
         &:disabled {
             cursor: not-allowed;
             background-color: transparent;
