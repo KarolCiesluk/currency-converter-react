@@ -5,7 +5,7 @@ export const Wrapper = styled.p`
 `;
 
 export const CurrencyRates = styled.a`
-    color: hsl(208deg 100% 30%);
+    color: ${({ theme }) => theme.endeavour.dark};
     transition: font-weight 0.3s;
 
     &:hover {
@@ -18,6 +18,6 @@ export const CurrencyRates = styled.a`
     }
 
     &:active {
-        color: hsl(208deg 100% 45%);
+        color: ${({ theme }) => theme.endeavour.light};
     }
 `;
