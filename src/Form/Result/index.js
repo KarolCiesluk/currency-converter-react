@@ -1,12 +1,14 @@
+import { Wrapper } from "./styled";
+
 const Result = ({ resultData }) => (
-  <p className="form__result">
+  <Wrapper>
     {
       resultData && `
         ${resultData.myAmount}${resultData.myCurrency} =
         ${" "}${resultData.finalAmount}${resultData.wantedCurrency}
       `
     }
-  </p>
+  </Wrapper>
 );
 
 export default Result;
