@@ -7,7 +7,6 @@ const CurrencySelect = ({ description, currency, onCurrencyChange }) => (
         <InputField as="select"
             value={currency}
             onChange={onCurrencyChange}
-            className="form__inputField"
         >
             {currencies.map(({ name, fullName }) => (
                 <option key={name} value={name}>{name} - {fullName}</option>
