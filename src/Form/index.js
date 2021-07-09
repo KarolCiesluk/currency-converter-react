@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./style.css";
 import { currencies } from "./currencies";
 import Time from "./Time";
 import FormControls from "./FormControls";
