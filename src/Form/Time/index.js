@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Wrapper } from "./styled";
 
 const formatDate = (date) => {
   return date.toLocaleDateString(undefined, {
@@ -23,13 +24,13 @@ const Time = () => {
   }, []);
 
   return (
-    <p className="form__time">
+    <Wrapper>
       Dzisiaj jest
       {" "}
       <time dateTime={date.toJSON()}>
         {formatDate(date)}
       </time>
-    </p>
+    </Wrapper>
   );
 };
 
