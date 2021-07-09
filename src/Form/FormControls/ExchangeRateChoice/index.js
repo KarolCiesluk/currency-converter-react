@@ -11,7 +11,6 @@ const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setC
             value={isCustomRate}
             onChange={onRateOptionChange}
             id="selectRate"
-            className="form__inputField"
         >
             <option value={false}>Kurs domyślny</option>
             <option value={true}>Kurs własny</option>
