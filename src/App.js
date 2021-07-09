@@ -6,36 +6,36 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   headerColors: {
-    background: "#2f4858f7", // color 2a?
-    text: "#fcfcfc", // color 1
+    background: "#2f4858f7", // color 2a(turkusowy)
+    text: "#fcfcfc", // color 1(białawy)
   },
   formColors: {
-    shadow: "#7a7a7a", // color 3
-    background: "#f2f3f4d9", // color 2b?
+    shadow: "#7a7a7a", // color 3 (szary)
+    background: "#f2f3f4d9", // color 8 (jasny szary)
     formControlsColors: {
-      inputBackground: "#fcfcfc", // color 1
-      inputText: "#2F4858", // color 4
-      inputFocus: "hsl(208deg 100% 30%)", // color 5a
+      inputBackground: "#fcfcfc", // color 1 (białawy)
+      inputText: "#2F4858", // color 2b (turkusowy)
+      inputFocus: "hsl(208deg 100% 30%)", // color 5a (granatowy)
       customRateBackground: "transparent", // color 6 (transparent)
     },
     linkColors: {
-      text: "hsl(208deg 100% 30%)", // color 5a
-      active: "hsl(208deg 100% 45%)", // color 5b
+      text: "hsl(208deg 100% 30%)", // color 5a (granatowy)
+      active: "hsl(208deg 100% 45%)", // color 5b (jasny granatowy/niebieski)
     },
     resultColors: {
-      text: "hsl(3, 63%, 48%)", // color 7a
+      text: "hsl(3, 63%, 48%)", // color 7a (pomarańczowy)
     },
     submitButtonColors: {
-      text: "#fcfcfc", // color 1
-      background: "hsl(3, 63%, 48%)", // color 7a
-      hover: "hsl(3deg 100% 50%)", // color 7b?
-      focus: "hsl(3deg 100% 50%)", // color 7b?
-      active: "hsl(3, 63%, 58%)", // color 7c?
+      text: "#fcfcfc", // color 1 (białawy)
+      background: "hsl(3, 63%, 48%)", // color 7a (pomarańczowy)
+      hover: "hsl(3deg 100% 50%)", // color 7b? (jasny pomarańcz)
+      focus: "hsl(3deg 100% 50%)", // color 7b? (jasny pomarańcz)
+      active: "hsl(3, 63%, 58%)", // color 7c? (bardzo jasny pomarańcz)
     }
   },
   footerColors: {
-    border: "hsl(3, 63%, 48%)",  // color 7a
-    text: "hsl(3, 63%, 48%)", // color 7a
+    border: "hsl(3, 63%, 48%)",  // color 7a (pomarańczowy)
+    text: "hsl(3, 63%, 48%)", // color 7a (pomarańczowy)
   },
 };
 
