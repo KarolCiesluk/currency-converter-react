@@ -90,8 +90,8 @@ const Form = () => {
   };
   //
   const calculateResult = () => {
-    const result = myAmount / calculateExchangeRate();
-    return result.toFixed(2);
+    return myAmount / calculateExchangeRate();
+    // return result.toFixed(2);
   };
 
   const onFormSubmit = (event) => {
@@ -100,9 +100,9 @@ const Form = () => {
     const finalAmount = calculateResult();
 
     setResultData({
-      myAmount,
+      myAmount: +myAmount,
       myCurrency,
-      finalAmount,
+      finalAmount: +finalAmount,
       wantedCurrency,
     });
   };
