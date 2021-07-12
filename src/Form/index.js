@@ -1,35 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { currencies } from "./currencies";
 import Time from "./Time";
-import FormControls from "./FormControls";
-import Link from "./Link";
-import SubmitButton from "./SubmitButton";
-import Result from "./Result";
+import ConverterContent from "./ConverterContent";
 import { FormContainer } from "./styled";
-
-const useExchangeRateAPI = () => {
-  const requestURL = 'https://api.exchagerate.host/latest';
-  const [ratesAPI, setRatesAPI] = useState("");
-
-  useEffect(() => {
-    setTimeout(() => {
-      (async () => {
-        try {
-          const response = await fetch(requestURL);
-          if (!response.ok) {
-            throw new Error(response.statusText);
-          }
-          const rates = await response.json();
-          setRatesAPI(rates);
-        } catch {
-          setRatesAPI("Error occured");
-        }
-      })();
-    }, 1000);
-  }, []);
-
-  return ratesAPI;
-};
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
@@ -38,8 +11,6 @@ const Form = () => {
   const [isCustomRate, setIsCustomRate] = useState(false);
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
-
-  const exchangeRatesAPI = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
@@ -78,7 +49,7 @@ const Form = () => {
 
     return wantedCurrencyRate / myCurrencyRate;
   };
-
+  //
   const calculateResult = () => {
     const result = myAmount / calculateExchangeRate();
     return result.toFixed(2);
@@ -97,38 +68,22 @@ const Form = () => {
     });
   };
 
-  const renderFormContent = (param) => {
-    switch (param) {
-      case "":
-        return <div>Czekaj</div>;
-      case "Error occured":
-        return <div>ERROR!!!</div>;
-      default:
-        return <>
-          <div>{exchangeRatesAPI.date}</div>
-          <FormControls
-            myAmount={myAmount}
-            setMyAmount={setMyAmount}
-            myCurrency={myCurrency}
-            onMyCurrencyChange={onMyCurrencyChange}
-            wantedCurrency={wantedCurrency}
-            onWantedCurrencyChange={onWantedCurrencyChange}
-            isCustomRate={isCustomRate}
-            onRateOptionChange={onRateOptionChange}
-            customRate={customRate}
-            setCustomRate={setCustomRate}
-          />
-          <Link />
-          <SubmitButton buttonText="Przelicz!" />
-          <Result resultData={resultData} />
-        </>;
-    }
-  };
-
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Time />
-      {renderFormContent(exchangeRatesAPI)}
+      <ConverterContent
+        myAmount={myAmount}
+        setMyAmount={setMyAmount}
+        myCurrency={myCurrency}
+        onMyCurrencyChange={onMyCurrencyChange}
+        wantedCurrency={wantedCurrency}
+        onWantedCurrencyChange={onWantedCurrencyChange}
+        isCustomRate={isCustomRate}
+        onRateOptionChange={onRateOptionChange}
+        customRate={customRate}
+        setCustomRate={setCustomRate}
+        resultData={resultData}
+      />
       {/* {
         typeof exchangeRatesAPI === "object" &&
         <>
