@@ -21,8 +21,8 @@ const useExchangeRateAPI = () => {
           }
           const rates = await response.json();
           setResultAPI(rates);
-        } catch (error) {
-          console.log("Zepsuło się", error);
+        } catch {
+          setResultAPI("error");
         }
       })();
     }, 1000);
@@ -100,22 +100,28 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Time />
-      <div>{ratesAPI && ratesAPI.rates.USD}</div>
-      <FormControls
-        myAmount={myAmount}
-        setMyAmount={setMyAmount}
-        myCurrency={myCurrency}
-        onMyCurrencyChange={onMyCurrencyChange}
-        wantedCurrency={wantedCurrency}
-        onWantedCurrencyChange={onWantedCurrencyChange}
-        isCustomRate={isCustomRate}
-        onRateOptionChange={onRateOptionChange}
-        customRate={customRate}
-        setCustomRate={setCustomRate}
-      />
-      <Link />
-      <SubmitButton buttonText="Przelicz!" />
-      <Result resultData={resultData} />
+      {
+        ratesAPI ? ratesAPI === "error" ?
+        <div>ERROR!!!</div> :
+          <>
+            <FormControls
+              myAmount={myAmount}
+              setMyAmount={setMyAmount}
+              myCurrency={myCurrency}
+              onMyCurrencyChange={onMyCurrencyChange}
+              wantedCurrency={wantedCurrency}
+              onWantedCurrencyChange={onWantedCurrencyChange}
+              isCustomRate={isCustomRate}
+              onRateOptionChange={onRateOptionChange}
+              customRate={customRate}
+              setCustomRate={setCustomRate}
+            />
+            <Link />
+            <SubmitButton buttonText="Przelicz!" />
+            <Result resultData={resultData} />
+          </> :
+          <div>Czekaj</div>
+      }
     </FormContainer>
   );
 };
