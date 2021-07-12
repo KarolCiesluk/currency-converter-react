@@ -19,8 +19,8 @@ const ConverterContent = ({
     resultData,
     exchangeRatesAPI
 }) => {
-    const renderConverterContent = (param) => {
-        switch (param) {
+    const renderConverterContent = (parameter) => {
+        switch (parameter) {
             case "":
                 return <div>Czekaj</div>;
             case "Error occured":

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { currencies } from "./currencies";
+// import { currencies } from "./currencies";
 import Time from "./Time";
 import ConverterContent from "./ConverterContent";
 import { FormContainer } from "./styled";
@@ -13,9 +13,11 @@ const useExchangeRateAPI = () => {
           (async () => {
               try {
                   const response = await fetch(requestURL);
+                  
                   if (!response.ok) {
                       throw new Error(response.statusText);
                   }
+
                   const rates = await response.json();
                   setRatesAPI(rates);
               } catch {
@@ -70,10 +72,21 @@ const Form = () => {
       return customRate;
     }
 
-    const wantedCurrencyRate = currencies.find(({ name }) => name === wantedCurrency).rate;
-    const myCurrencyRate = currencies.find(({ name }) => name === myCurrency).rate;
+    let wantedCurrencyRate;
+    let myCurrencyRate;
 
-    return wantedCurrencyRate / myCurrencyRate;
+    const exchangeRatesList = exchangeRatesAPI.rates;
+    
+    for(const key in exchangeRatesList) {
+      if (key === wantedCurrency) {
+        wantedCurrencyRate = exchangeRatesList[key];
+      }
+      if (key === myCurrency) {
+        myCurrencyRate = exchangeRatesList[key];
+      }
+    }
+
+    return  myCurrencyRate / wantedCurrencyRate;
   };
   //
   const calculateResult = () => {
