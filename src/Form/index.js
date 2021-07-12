@@ -5,25 +5,27 @@ import { FormContainer } from "./styled";
 
 const useExchangeRateAPI = () => {
   const requestURL = 'https://api.exchangerate.host/latest';
-  const [ratesAPI, setRatesAPI] = useState("");
+  const [ratesAPI, setRatesAPI] = useState();
 
   useEffect(() => {
-      setTimeout(() => {
-          (async () => {
-              try {
-                  const response = await fetch(requestURL);
-                  
-                  if (!response.ok) {
-                      throw new Error(response.statusText);
-                  }
+    setTimeout(() => {
+      (async () => {
+        try {
+          const response = await fetch(requestURL);
 
-                  const rates = await response.json();
-                  setRatesAPI(rates);
-              } catch {
-                  setRatesAPI("Error occured");
-              }
-          })();
-      }, 1000);
+          if (!response.ok) {
+            throw new Error(response.statusText);
+          }
+
+          const rates = await response.json();
+          setRatesAPI(rates);
+        } catch {
+          setRatesAPI({
+            error: true,
+          });
+        }
+      })();
+    }, 1000);
   }, []);
 
   return ratesAPI;
@@ -75,8 +77,8 @@ const Form = () => {
     let myCurrencyRate;
 
     const exchangeRatesList = exchangeRatesAPI.rates;
-    
-    for(const key in exchangeRatesList) {
+
+    for (const key in exchangeRatesList) {
       if (key === wantedCurrency) {
         wantedCurrencyRate = exchangeRatesList[key];
       }
@@ -85,7 +87,7 @@ const Form = () => {
       }
     }
 
-    return  myCurrencyRate / wantedCurrencyRate;
+    return myCurrencyRate / wantedCurrencyRate;
   };
   //
   const calculateResult = () => {

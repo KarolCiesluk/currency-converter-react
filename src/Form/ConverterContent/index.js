@@ -21,9 +21,9 @@ const ConverterContent = ({
 }) => {
     const renderConverterContent = (parameter) => {
         switch (parameter) {
-            case "":
+            case undefined:
                 return <div>Czekaj</div>;
-            case "Error occured":
+            case parameter.error:
                 return <div>ERROR!!!</div>;
             default:
                 return <>
