@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { currencies } from "./currencies";
 import Time from "./Time";
 import ConverterContent from "./ConverterContent";
 import { FormContainer } from "./styled";
@@ -91,7 +90,6 @@ const Form = () => {
   //
   const calculateResult = () => {
     return myAmount / calculateExchangeRate();
-    // return result.toFixed(2);
   };
 
   const onFormSubmit = (event) => {
@@ -124,59 +122,6 @@ const Form = () => {
         resultData={resultData}
         exchangeRatesAPI={exchangeRatesAPI}
       />
-      {/* {
-        typeof exchangeRatesAPI === "object" &&
-        <>
-          <div>{exchangeRatesAPI.date}</div>
-          <FormControls
-            myAmount={myAmount}
-            setMyAmount={setMyAmount}
-            myCurrency={myCurrency}
-            onMyCurrencyChange={onMyCurrencyChange}
-            wantedCurrency={wantedCurrency}
-            onWantedCurrencyChange={onWantedCurrencyChange}
-            isCustomRate={isCustomRate}
-            onRateOptionChange={onRateOptionChange}
-            customRate={customRate}
-            setCustomRate={setCustomRate}
-          />
-          <Link />
-          <SubmitButton buttonText="Przelicz!" />
-          <Result resultData={resultData} />
-        </>
-      }
-      {
-        exchangeRatesAPI === "Error occured" &&
-        <div>ERROR!!!</div>
-      }
-      {
-        !exchangeRatesAPI &&
-        <div>Czekaj</div>
-      } */}
-      {/* {
-        exchangeRatesAPI ?
-          exchangeRatesAPI === "Error occured" ?
-            <div>ERROR!!!</div> :
-            <>
-              <div>{exchangeRatesAPI.date}</div>
-              <FormControls
-                myAmount={myAmount}
-                setMyAmount={setMyAmount}
-                myCurrency={myCurrency}
-                onMyCurrencyChange={onMyCurrencyChange}
-                wantedCurrency={wantedCurrency}
-                onWantedCurrencyChange={onWantedCurrencyChange}
-                isCustomRate={isCustomRate}
-                onRateOptionChange={onRateOptionChange}
-                customRate={customRate}
-                setCustomRate={setCustomRate}
-              />
-              <Link />
-              <SubmitButton buttonText="Przelicz!" />
-              <Result resultData={resultData} />
-            </> :
-          <div>Czekaj</div>
-      } */}
     </FormContainer>
   );
 };
