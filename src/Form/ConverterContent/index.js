@@ -1,34 +1,9 @@
-import { useState, useEffect } from "react";
 import MyAmount from "./MyAmount";
 import CurrencySelect from "./CurrencySelect";
 import ExchangeRateChoice from "./ExchangeRateChoice";
 import Link from "./Link";
 import SubmitButton from "./SubmitButton";
 import Result from "./Result";
-
-const useExchangeRateAPI = () => {
-    const requestURL = 'https://api.exchangerate.host/latest';
-    const [ratesAPI, setRatesAPI] = useState("");
-
-    useEffect(() => {
-        setTimeout(() => {
-            (async () => {
-                try {
-                    const response = await fetch(requestURL);
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    const rates = await response.json();
-                    setRatesAPI(rates);
-                } catch {
-                    setRatesAPI("Error occured");
-                }
-            })();
-        }, 1000);
-    }, []);
-
-    return ratesAPI;
-};
 
 const ConverterContent = ({
     myAmount,
@@ -41,10 +16,9 @@ const ConverterContent = ({
     onRateOptionChange,
     customRate,
     setCustomRate,
-    resultData
+    resultData,
+    exchangeRatesAPI
 }) => {
-    const exchangeRatesAPI = useExchangeRateAPI();
-
     const renderConverterContent = (param) => {
         switch (param) {
             case "":
