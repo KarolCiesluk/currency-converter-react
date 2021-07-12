@@ -8,8 +8,8 @@ import Result from "./Result";
 import { FormContainer } from "./styled";
 
 const useExchangeRateAPI = () => {
-  const [rates, setRates] = useState();
   const requestURL = 'https://api.exchangerate.host/latest';
+  const [resultAPI, setResultAPI] = useState();
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,8 +19,8 @@ const useExchangeRateAPI = () => {
           if (!response.ok) {
             throw new Error(response.statusText);
           }
-          const ratesAPI = await response.json();
-          setRates(ratesAPI);
+          const rates = await response.json();
+          setResultAPI(rates);
         } catch (error) {
           console.log("Zepsuło się", error);
         }
@@ -28,12 +28,8 @@ const useExchangeRateAPI = () => {
     }, 1000);
   }, []);
 
-  // useEffect(() => {
-  //   console.log(rates && rates.rates);
-  // }, [rates]);
-
-  return rates;
-}
+  return resultAPI;
+};
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
@@ -43,7 +39,7 @@ const Form = () => {
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
 
-  const rates = useExchangeRateAPI();
+  const ratesAPI = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
@@ -104,7 +100,7 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Time />
-      <div>{rates && rates.rates.USD}</div>
+      <div>{ratesAPI && ratesAPI.rates.USD}</div>
       <FormControls
         myAmount={myAmount}
         setMyAmount={setMyAmount}
