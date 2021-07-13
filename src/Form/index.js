@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Time from "./Time";
+import Clock from "./Clock";
 import ConverterContent from "./ConverterContent";
 import { FormContainer } from "./styled";
 import { useExchangeRateAPI } from "./useExchangeRateApi";
@@ -82,7 +82,7 @@ const Form = () => {
 
   return (
     <FormContainer onSubmit={onFormSubmit}>
-      <Time />
+      <Clock />
       <ConverterContent
         myAmount={myAmount}
         setMyAmount={setMyAmount}

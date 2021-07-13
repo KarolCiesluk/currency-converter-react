@@ -12,7 +12,7 @@ const formatDate = (date) => {
   })
 };
 
-const Time = () => {
+const Clock = () => {
   const date = useCurrentDate();
 
   return (
@@ -26,4 +26,4 @@ const Time = () => {
   );
 };
 
-export default Time;
+export default Clock;
