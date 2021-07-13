@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
+
 export const Wrapper = styled.p`
     font-size: 14px;
 `;
 
-export const CurrencyRates = styled.a`
+export const Link = styled.a`
     color: ${({ theme }) => theme.endeavour.dark};
     transition: font-weight 0.3s;
 
