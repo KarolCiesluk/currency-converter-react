@@ -17,17 +17,17 @@ const ConverterContent = ({
     customRate,
     setCustomRate,
     resultData,
-    exchangeRatesAPI
+    exchangeRateAPI
 }) => {
     const renderConverterContent = () => {
-        switch (exchangeRatesAPI) {
+        switch (exchangeRateAPI) {
             case undefined:
                 return <div>Czekaj</div>;
-            case exchangeRatesAPI.error:
+            case exchangeRateAPI.error:
                 return <div>ERROR!!!</div>;
             default:
                 return <>
-                    <div>{exchangeRatesAPI.date}</div>
+                    <div>{exchangeRateAPI.date}</div>
                     <MyAmount
                         description="Kwota:"
                         myAmount={myAmount}
@@ -37,13 +37,13 @@ const ConverterContent = ({
                         description="Przelicz z:"
                         currency={myCurrency}
                         onCurrencyChange={onMyCurrencyChange}
-                        exchangeRatesAPI={exchangeRatesAPI}
+                        exchangeRatesAPI={exchangeRateAPI}
                     />
                     <CurrencySelect
                         description="Przelicz na:"
                         currency={wantedCurrency}
                         onCurrencyChange={onWantedCurrencyChange}
-                        exchangeRatesAPI={exchangeRatesAPI}
+                        exchangeRatesAPI={exchangeRateAPI}
                     />
                     <ExchangeRateChoice
                         isCustomRate={isCustomRate}

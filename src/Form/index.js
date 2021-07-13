@@ -13,7 +13,7 @@ const Form = () => {
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
 
-  const exchangeRatesAPI = useExchangeRateAPI();
+  const exchangeRateAPI = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
@@ -50,7 +50,7 @@ const Form = () => {
     let wantedCurrencyRate;
     let myCurrencyRate;
 
-    const exchangeRatesList = exchangeRatesAPI.rates;
+    const exchangeRatesList = exchangeRateAPI.rates;
 
     for (const key in exchangeRatesList) {
       if (key === wantedCurrency) {
@@ -96,7 +96,7 @@ const Form = () => {
         customRate={customRate}
         setCustomRate={setCustomRate}
         resultData={resultData}
-        exchangeRatesAPI={exchangeRatesAPI}
+        exchangeRateAPI={exchangeRateAPI}
       />
     </FormContainer>
   );
