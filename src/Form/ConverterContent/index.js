@@ -2,7 +2,6 @@ import MyAmount from "./MyAmount";
 import CurrencySelect from "./CurrencySelect";
 import ExchangeRateChoice from "./ExchangeRateChoice";
 import ExchangeRatesInfo from "./ExchangeRatesInfo";
-// import Link from "./Link";
 import SubmitButton from "./SubmitButton";
 import Result from "./Result";
 
@@ -52,7 +51,6 @@ const ConverterContent = ({
                         setCustomRate={setCustomRate}
                     />
                     <ExchangeRatesInfo exchangeRateAPI={exchangeRateAPI} />
-                    {/* <Link /> */}
                     <SubmitButton buttonText="Przelicz!" />
                     <Result resultData={resultData} />
                 </>;
