@@ -1,4 +1,4 @@
-import { Wrapper, Link } from "./styled";
+import { Wrapper, Link, Time } from "./styled";
 
 const ExchangeRatesInfo = ({ exchangeRateAPI }) => (
     <Wrapper>
@@ -9,7 +9,7 @@ const ExchangeRatesInfo = ({ exchangeRateAPI }) => (
         >
             Europejskiego Banku Centralnego
         </Link>.{" "}
-        Aktualne na dzień: <b>{exchangeRateAPI.date}</b>
+        Aktualne na dzień: <Time>{exchangeRateAPI.date}</Time>
     </Wrapper>
 );
 

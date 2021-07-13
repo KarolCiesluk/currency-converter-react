@@ -22,3 +22,7 @@ export const Link = styled.a`
         color: ${({ theme }) => theme.endeavour.light};
     }
 `;
+
+export const Time = styled.time `
+    font-weight: bold;
+`;
