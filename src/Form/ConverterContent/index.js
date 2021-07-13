@@ -37,11 +37,13 @@ const ConverterContent = ({
                         description="Przelicz z:"
                         currency={myCurrency}
                         onCurrencyChange={onMyCurrencyChange}
+                        exchangeRatesAPI={exchangeRatesAPI}
                     />
                     <CurrencySelect
                         description="Przelicz na:"
                         currency={wantedCurrency}
                         onCurrencyChange={onWantedCurrencyChange}
+                        exchangeRatesAPI={exchangeRatesAPI}
                     />
                     <ExchangeRateChoice
                         isCustomRate={isCustomRate}
