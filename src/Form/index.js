@@ -4,7 +4,6 @@ import ConverterContent from "./ConverterContent";
 import { FormContainer } from "./styled";
 import { useExchangeRateAPI } from "./useExchangeRateApi";
 
-
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
   const [myCurrency, setMyCurrency] = useState("PLN");
