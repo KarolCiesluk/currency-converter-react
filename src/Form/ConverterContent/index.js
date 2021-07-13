@@ -19,11 +19,11 @@ const ConverterContent = ({
     resultData,
     exchangeRatesAPI
 }) => {
-    const renderConverterContent = (parameter) => {
-        switch (parameter) {
+    const renderConverterContent = () => {
+        switch (exchangeRatesAPI) {
             case undefined:
                 return <div>Czekaj</div>;
-            case parameter.error:
+            case exchangeRatesAPI.error:
                 return <div>ERROR!!!</div>;
             default:
                 return <>
@@ -59,7 +59,7 @@ const ConverterContent = ({
     };
 
     return (
-        <div>{renderConverterContent(exchangeRatesAPI)}</div>
+        <div>{renderConverterContent()}</div>
     );
 };
 
