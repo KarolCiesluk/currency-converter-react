@@ -12,7 +12,6 @@ const Form = () => {
   const [isCustomRate, setIsCustomRate] = useState(false);
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
-
   const [exchangeRateAPI, isError] = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
@@ -46,11 +45,10 @@ const Form = () => {
     if (isCustomRate) {
       return customRate;
     }
-
+    
+    const exchangeRatesList = exchangeRateAPI.rates;
     let wantedCurrencyRate;
     let myCurrencyRate;
-
-    const exchangeRatesList = exchangeRateAPI.rates;
 
     for (const key in exchangeRatesList) {
       if (key === wantedCurrency) {
@@ -63,7 +61,7 @@ const Form = () => {
 
     return myCurrencyRate / wantedCurrencyRate;
   };
-  //
+  
   const calculateResult = () => {
     return myAmount / calculateExchangeRate();
   };
