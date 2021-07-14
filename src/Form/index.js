@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Clock from "./Clock";
 import ConverterContent from "./ConverterContent";
+import Message from "./Message";
 import { FormContainer } from "./styled";
 import { useExchangeRateAPI } from "./useExchangeRateApi";
 
@@ -83,21 +84,24 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Clock />
-      <ConverterContent
-        myAmount={myAmount}
-        setMyAmount={setMyAmount}
-        myCurrency={myCurrency}
-        onMyCurrencyChange={onMyCurrencyChange}
-        wantedCurrency={wantedCurrency}
-        onWantedCurrencyChange={onWantedCurrencyChange}
-        isCustomRate={isCustomRate}
-        onRateOptionChange={onRateOptionChange}
-        customRate={customRate}
-        setCustomRate={setCustomRate}
-        resultData={resultData}
-        exchangeRateAPI={exchangeRateAPI}
-        isError={isError}
-      />
+      {exchangeRateAPI ?
+        <ConverterContent
+          myAmount={myAmount}
+          setMyAmount={setMyAmount}
+          myCurrency={myCurrency}
+          onMyCurrencyChange={onMyCurrencyChange}
+          wantedCurrency={wantedCurrency}
+          onWantedCurrencyChange={onWantedCurrencyChange}
+          isCustomRate={isCustomRate}
+          onRateOptionChange={onRateOptionChange}
+          customRate={customRate}
+          setCustomRate={setCustomRate}
+          resultData={resultData}
+          exchangeRateAPI={exchangeRateAPI}
+        /> :
+        <Message isError={isError} />
+      }
+
     </FormContainer>
   );
 };
