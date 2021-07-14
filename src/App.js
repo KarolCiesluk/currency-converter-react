@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Main from "./Main";
-import Form from "./Form";
+import Form from "./Main/Form";
 import Footer from "./Footer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
