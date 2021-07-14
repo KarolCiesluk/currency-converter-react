@@ -22,9 +22,20 @@ const ConverterContent = ({
     const renderConverterContent = () => {
         switch (exchangeRateAPI) {
             case undefined:
-                return <div>Czekaj</div>;
-            case exchangeRateAPI.error:
-                return <div>ERROR!!!</div>;
+                return (
+                    <p>
+                        Sekundka...<br />
+                        Ładuję dane z Europejskiego Banku Centralnego
+                    </p>
+                );
+            case "error":
+                return (
+                    <p>
+                        Hmm...<br />
+                        Coś poszło nie tak. Sprawdź, czy masz połączenie z internetem.{" "}
+                        Jeśli masz... to wygląda na to, że to nasza wina. Może spróbuj później!
+                    </p>
+                );
             default:
                 return <>
                     <MyAmount
