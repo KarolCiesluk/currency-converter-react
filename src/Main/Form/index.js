@@ -12,7 +12,7 @@ const Form = () => {
   const [isCustomRate, setIsCustomRate] = useState(false);
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
-  const [exchangeRateAPI, isError] = useExchangeRateAPI();
+  const exchangeRateAPI = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
@@ -82,7 +82,7 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Clock />
-      {exchangeRateAPI ?
+      {exchangeRateAPI.rates ?
         <ConverterContent
           myAmount={myAmount}
           setMyAmount={setMyAmount}
@@ -97,7 +97,7 @@ const Form = () => {
           resultData={resultData}
           exchangeRateAPI={exchangeRateAPI}
         /> :
-        <Message isError={isError} />
+        <Message exchangeRateAPI={exchangeRateAPI} />
       }
 
     </FormContainer>
