@@ -1,8 +1,8 @@
-import { Wrapper } from "./styled";
+import { Wrapper, Copyright } from "./styled";
 
 const Footer = () => (
     <Wrapper>
-        <p>&copy; 2021 Karol Cieśluk</p>
+        <Copyright>&copy; 2021 Karol Cieśluk</Copyright>
     </Wrapper>
 );
 

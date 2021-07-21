@@ -7,3 +7,7 @@ export const Wrapper = styled.footer`
     text-align: center;
     color: ${({ theme }) => theme.persianRed.dark};
 `;
+
+export const Copyright = styled.p`
+    margin: 9px;
+`;
