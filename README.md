@@ -35,9 +35,6 @@ The Currency converter was made during [YouCode](https://youcode.pl/frontend-dev
 - Local Storage
 - Custom Hooks
 - Styled-Components
-- Redux
-- Redux Saga
-- React Router
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
