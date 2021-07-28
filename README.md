@@ -18,14 +18,7 @@ https://karolciesluk.github.io/currency-converter-react/
 
 It's is a little app that allows you to calculate currency conversion.
 
-At the moment there are four currencies available:
-
-- Polish zloty
-- US dollar
-- Euro
-- Norwegian crown
-
-You may use either your own or default exchange rates based on currency tables from [money.pl](https://www.money.pl/pieniadze/nbp/srednie/) (1/5/2021).
+You may use either your own or default exchange rates based [EU VAT Rates API](https://exchangerate.host)
 
 The Currency converter was made during [YouCode](https://youcode.pl/frontend-developer/) front-end developer course.
 
@@ -38,7 +31,13 @@ The Currency converter was made during [YouCode](https://youcode.pl/frontend-dev
 - CSS
 - CSS Grid
 - Media Queries
-- BEM
+- Immutability
+- Local Storage
+- Custom Hooks
+- Styled-Components
+- Redux
+- Redux Saga
+- React Router
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
