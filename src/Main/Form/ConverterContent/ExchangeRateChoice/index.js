@@ -1,4 +1,5 @@
-import { GridContainer, InputField } from "../styled";
+import { GridContainer } from "../GridContainer";
+import { InputField } from "../InputField";
 import { ScreenReaderLabel } from "./styled";
 
 const ExchangeRateChoice = ({ isCustomRate, onRateOptionChange, customRate, setCustomRate }) => (

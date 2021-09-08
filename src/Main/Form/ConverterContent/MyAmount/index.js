@@ -1,4 +1,7 @@
-import { GridContainer, InputDescription, InputField } from "../styled";
+import { GridContainer } from "../GridContainer";
+import { InputDescription } from "../InputDescription";
+import { InputField } from "../InputField";
+
 
 const MyAmount = ({ description, myAmount, setMyAmount }) => (
     <GridContainer>
