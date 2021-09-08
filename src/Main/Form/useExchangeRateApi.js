@@ -5,7 +5,7 @@ export const useExchangeRateAPI = () => {
   const [exchangeRateAPI, setExchangeRateAPI] = useState({});
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutID = setTimeout(() => {
       (async () => {
         try {
           const response = await fetch(requestURL);
@@ -17,10 +17,12 @@ export const useExchangeRateAPI = () => {
           const rates = await response.json();
           setExchangeRateAPI(rates);
         } catch {
-          setExchangeRateAPI({error: true});
+          setExchangeRateAPI({ error: true });
         }
       })();
     }, 1000);
+
+    return () => clearTimeout(timeoutID);
   }, []);
 
   return exchangeRateAPI;
