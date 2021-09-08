@@ -12,7 +12,7 @@
 
 https://karolciesluk.github.io/currency-converter-react/
 
-![How to use demonstration](public/converterDemo.gif)
+![How to use demonstration](src/converterDemo.gif)
 
 ## Description
 
