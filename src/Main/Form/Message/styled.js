@@ -5,5 +5,5 @@ export const LoadingMessage = styled.p`
 `;
 
 export const ErrorMessage = styled.p`
-    color: ${({theme}) => theme.persianRed.dark}
+    color: ${({ theme }) => theme.persianRed.dark}
 `;

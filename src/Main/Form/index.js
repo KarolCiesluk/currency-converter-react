@@ -45,7 +45,7 @@ const Form = () => {
     if (isCustomRate) {
       return customRate;
     }
-    
+
     const exchangeRatesList = exchangeRateAPI.rates;
     let wantedCurrencyRate;
     let myCurrencyRate;
@@ -61,7 +61,7 @@ const Form = () => {
 
     return myCurrencyRate / wantedCurrencyRate;
   };
-  
+
   const calculateResult = () => {
     return myAmount / calculateExchangeRate();
   };

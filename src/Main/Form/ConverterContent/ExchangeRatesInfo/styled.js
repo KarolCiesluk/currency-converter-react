@@ -22,6 +22,6 @@ export const Link = styled.a`
     }
 `;
 
-export const Time = styled.time `
+export const Time = styled.time`
     font-weight: bold;
 `;

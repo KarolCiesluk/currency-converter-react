@@ -2,7 +2,7 @@ import { GridContainer, InputDescription, InputField } from "../styled";
 
 const CurrencySelect = ({ description, currency, onCurrencyChange, exchangeRateAPI }) => {
     const currencies = Object.keys(exchangeRateAPI.rates);
-    
+
     return (
         <GridContainer>
             <InputDescription>{description}</InputDescription>
