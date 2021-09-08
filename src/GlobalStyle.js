@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Open Sans', sans-serif;
         font-size: 18px;
-        color: ${({theme}) => theme.pickledBluewood.light};
+        color: ${({ theme }) => theme.pickledBluewood.light};
         background-image: url(${backgroundImage});
         background-repeat: no-repeat;
         background-size: cover;
