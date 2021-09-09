@@ -7,7 +7,7 @@ export const GridContainer = styled.label`
   grid-gap: 4px;
   grid-auto-rows: 30px;
 
-  @media (max-width: 520px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     grid-template-columns: 1fr;
   }
 `;

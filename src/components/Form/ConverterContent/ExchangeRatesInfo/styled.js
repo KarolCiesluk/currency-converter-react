@@ -5,7 +5,7 @@ export const Wrapper = styled.p`
 `;
 
 export const Link = styled.a`
-  color: ${({ theme }) => theme.endeavour.dark};
+  color: ${({ theme }) => theme.colors.endeavour.dark};
   transition: font-weight 0.3s;
 
   &:hover {
@@ -18,7 +18,7 @@ export const Link = styled.a`
   }
 
   &:active {
-    color: ${({ theme }) => theme.endeavour.light};
+    color: ${({ theme }) => theme.colors.endeavour.light};
   }
 `;
 
