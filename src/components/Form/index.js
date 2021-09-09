@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useExchangeRateAPI } from "./useExchangeRateApi";
+import { FormContainer } from "./styled";
 import Clock from "./Clock";
 import ConverterContent from "./ConverterContent";
 import Message from "./Message";
-import { FormContainer } from "./styled";
-import { useExchangeRateAPI } from "./useExchangeRateApi";
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
@@ -82,6 +82,7 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Clock />
+      
       {exchangeRateAPI.rates ?
         <ConverterContent
           myAmount={myAmount}
@@ -99,7 +100,7 @@ const Form = () => {
         /> :
         <Message exchangeRateAPI={exchangeRateAPI} />
       }
-
+      
     </FormContainer>
   );
 };

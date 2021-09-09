@@ -1,22 +1,22 @@
 import styled, { css } from "styled-components";
 
 export const InputField = styled.input`
-    border-radius: 5px;
-    color: ${({ theme }) => theme.pickledBluewood.light};
-    background-color: ${({ theme }) => theme.alabaster};
+  border-radius: 5px;
+  color: ${({ theme }) => theme.pickledBluewood.light};
+  background-color: ${({ theme }) => theme.alabaster};
 
-    &:focus {
-        outline-color: ${({ theme }) => theme.endeavour.dark};
+  &:focus {
+    outline-color: ${({ theme }) => theme.endeavour.dark};
+  }
+
+  ${({ myAmount }) => myAmount && css`
+    font-weight: 600;
+  `}
+
+  ${({ customRate }) => customRate && css`
+    &:disabled {
+      cursor: not-allowed;
+      background-color: transparent;
     }
-
-    ${({ myAmount }) => myAmount && css`
-        font-weight: 600;
-    `}
-
-    ${({ customRate }) => customRate && css`
-        &:disabled {
-            cursor: not-allowed;
-            background-color: transparent;
-        }
-    `}
+  `}
 `;
