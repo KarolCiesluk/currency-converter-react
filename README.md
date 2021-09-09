@@ -17,8 +17,7 @@ https://karolciesluk.github.io/currency-converter-react/
 ## Description
 
 It's is a little app that allows you to calculate currency conversion.
-
-You may use either your own or default exchange rates based [EU VAT Rates API](https://exchangerate.host)
+You may use either your own or default exchange rates based [EU VAT Rates API](https://exchangerate.host).
 
 The Currency converter was made during [YouCode](https://youcode.pl/frontend-developer/) front-end developer course.
 
@@ -34,8 +33,6 @@ The Currency converter was made during [YouCode](https://youcode.pl/frontend-dev
 - Media Queries
 - Styled-Components
 - Styled-Normalized
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
