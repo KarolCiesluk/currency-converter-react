@@ -24,17 +24,18 @@ The Currency converter was made during [YouCode](https://youcode.pl/frontend-dev
 
 ## Technologies
 - HTML
-- Javascript
+- Javascript ES6
 - React
+- React Hooks
 - Babel
 - JSX
-- CSS
+- Fetch API
 - CSS Grid
 - Media Queries
-- Immutability
-- Local Storage
-- Custom Hooks
 - Styled-Components
+- Styled-Normalized
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
