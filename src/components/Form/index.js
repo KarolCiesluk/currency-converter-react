@@ -5,10 +5,10 @@ import Clock from "./Clock";
 import Message from "./Message";
 import MyAmount from "./MyAmount";
 import CurrencySelect from "./CurrencySelect";
-import ExchangeRateChoice from "./ConverterContent/ExchangeRateChoice";
 import ExchangeRatesInfo from "./ExchangeRatesInfo";
 import SubmitButton from "./SubmitButton";
 import Result from "./Result";
+import ExchangeRateChoice from "./ExchangeRateChoice";
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
