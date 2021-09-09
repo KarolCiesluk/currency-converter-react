@@ -2,8 +2,13 @@ import { useState } from "react";
 import { useExchangeRateAPI } from "./useExchangeRateApi";
 import { FormContainer } from "./styled";
 import Clock from "./Clock";
-import ConverterContent from "./ConverterContent";
 import Message from "./Message";
+import MyAmount from "./MyAmount";
+import CurrencySelect from "./CurrencySelect";
+import ExchangeRateChoice from "./ConverterContent/ExchangeRateChoice";
+import ExchangeRatesInfo from "./ExchangeRatesInfo";
+import SubmitButton from "./SubmitButton";
+import Result from "./Result";
 
 const Form = () => {
   const [myAmount, setMyAmount] = useState("");
@@ -12,7 +17,7 @@ const Form = () => {
   const [isCustomRate, setIsCustomRate] = useState(false);
   const [customRate, setCustomRate] = useState("");
   const [resultData, setResultData] = useState();
-  const exchangeRateAPI = useExchangeRateAPI();
+  const { status, rates, date } = useExchangeRateAPI();
 
   const onRateOptionChange = ({ target }) => {
     const chosenRateOption = (target.value === "true");
@@ -46,7 +51,7 @@ const Form = () => {
       return customRate;
     }
 
-    const exchangeRatesList = exchangeRateAPI.rates;
+    const exchangeRatesList = rates;
     let wantedCurrencyRate;
     let myCurrencyRate;
 
@@ -82,25 +87,39 @@ const Form = () => {
   return (
     <FormContainer onSubmit={onFormSubmit}>
       <Clock />
-      
-      {exchangeRateAPI.rates ?
-        <ConverterContent
-          myAmount={myAmount}
-          setMyAmount={setMyAmount}
-          myCurrency={myCurrency}
-          onMyCurrencyChange={onMyCurrencyChange}
-          wantedCurrency={wantedCurrency}
-          onWantedCurrencyChange={onWantedCurrencyChange}
-          isCustomRate={isCustomRate}
-          onRateOptionChange={onRateOptionChange}
-          customRate={customRate}
-          setCustomRate={setCustomRate}
-          resultData={resultData}
-          exchangeRateAPI={exchangeRateAPI}
-        /> :
-        <Message exchangeRateAPI={exchangeRateAPI} />
+
+      {status === "success" ?
+        <>
+          <MyAmount
+            description="Kwota:"
+            myAmount={myAmount}
+            setMyAmount={setMyAmount}
+          />
+          <CurrencySelect
+            description="Przelicz z:"
+            currency={myCurrency}
+            onCurrencyChange={onMyCurrencyChange}
+            rates={rates}
+          />
+          <CurrencySelect
+            description="Przelicz na:"
+            currency={wantedCurrency}
+            onCurrencyChange={onWantedCurrencyChange}
+            rates={rates}
+          />
+          <ExchangeRateChoice
+            isCustomRate={isCustomRate}
+            onRateOptionChange={onRateOptionChange}
+            customRate={customRate}
+            setCustomRate={setCustomRate}
+          />
+          <ExchangeRatesInfo date={date} />
+          <SubmitButton buttonText="Przelicz!" />
+          <Result resultData={resultData} />
+        </> :
+        <Message status={status} />
       }
-      
+
     </FormContainer>
   );
 };

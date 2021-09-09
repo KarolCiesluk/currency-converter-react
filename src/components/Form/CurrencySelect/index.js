@@ -2,8 +2,8 @@ import { GridContainer } from "../GridContainer";
 import { InputDescription } from "../InputDescription";
 import { InputField } from "../InputField";
 
-const CurrencySelect = ({ description, currency, onCurrencyChange, exchangeRateAPI }) => {
-  const currencies = Object.keys(exchangeRateAPI.rates);
+const CurrencySelect = ({ description, currency, onCurrencyChange, rates }) => {
+  const currencies = Object.keys(rates);
 
   return (
     <GridContainer>

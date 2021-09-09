@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useExchangeRateAPI = () => {
   const requestURL = 'https://api.exchangerate.host/latest';
-  const [exchangeRateAPI, setExchangeRateAPI] = useState({});
+  const [ratesData, setRatesData] = useState({ status: "loading" });
 
   useEffect(() => {
     const timeoutID = setTimeout(() => {
@@ -14,16 +14,20 @@ export const useExchangeRateAPI = () => {
             throw new Error(response.statusText);
           }
 
-          const rates = await response.json();
-          setExchangeRateAPI(rates);
+          const { rates, date } = await response.json();
+          setRatesData({
+            status: "success",
+            rates,
+            date,
+          });
         } catch {
-          setExchangeRateAPI({ error: true });
+          setRatesData({ status: "error" });
         }
       })();
-    }, 1000);
+    }, 2_000);
 
     return () => clearTimeout(timeoutID);
   }, []);
 
-  return exchangeRateAPI;
+  return ratesData;
 };

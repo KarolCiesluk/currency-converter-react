@@ -1,6 +1,6 @@
 import { Wrapper, Link, Time } from "./styled";
 
-const ExchangeRatesInfo = ({ exchangeRateAPI }) => (
+const ExchangeRatesInfo = ({ date }) => (
   <Wrapper>
     Kursy walut pobierane są z{" "}
     <Link
@@ -9,7 +9,7 @@ const ExchangeRatesInfo = ({ exchangeRateAPI }) => (
     >
       Europejskiego Banku Centralnego
     </Link>.{" "}
-    Aktualne na dzień: <Time>{exchangeRateAPI.date}</Time>
+    Aktualne na dzień: <Time>{date}</Time>
   </Wrapper>
 );
 
