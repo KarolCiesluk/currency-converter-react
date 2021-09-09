@@ -1,7 +1,7 @@
-import Header from "../../Header";
-import Main from "../../Main";
-import Form from "../../Main/Form";
-import Footer from "../../Footer";
+import Header from "../../components/Header";
+import Main from "../../components/Main";
+import Form from "../../components/Form";
+import Footer from "../../components/Footer";
 
 function App() {
   return (
