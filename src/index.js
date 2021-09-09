@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { GlobalStyle } from './core/GlobalStyle';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from "styled-components";
 import { theme } from "./core/theme";
 import { Normalize } from 'styled-normalize';
+import { GlobalStyle } from './core/GlobalStyle';
 import App from './core/App';
 
 ReactDOM.render(
